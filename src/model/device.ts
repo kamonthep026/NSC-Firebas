@@ -1,4 +1,3 @@
-import { Icon } from "ionic-angular";
 
 export class Device{
     key?: string;

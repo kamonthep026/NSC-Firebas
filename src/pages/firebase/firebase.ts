@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, App, MenuController } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
 import { Observable } from 'rxjs/Observable';
 import { Device } from '../../model/device';
-
 /**
  * Generated class for the FirebasePage page.
  *
@@ -14,7 +13,8 @@ import { Device } from '../../model/device';
 @IonicPage()
 @Component({
   selector: 'page-firebase',
-  templateUrl: 'firebase.html',
+  templateUrl: 'firebase.html'
+  
 })
 export class FirebasePage {
 
@@ -77,6 +77,5 @@ export class FirebasePage {
       console.log(result);
   })  
   }
-
-
+  
 }

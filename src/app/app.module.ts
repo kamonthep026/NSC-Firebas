@@ -14,28 +14,31 @@ import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { DatabaseProvider } from '../providers/database/database';
 import { HttpClientModule } from '@angular/common/http';
 
+
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyAzr2Or1XOwmlPb52dIbuxmqsrMfReqI5w",
-     authDomain: "nschome-9e525.firebaseapp.com",
-     databaseURL: "https://nschome-9e525.firebaseio.com",
-     projectId: "nschome-9e525",
-     storageBucket: "nschome-9e525.appspot.com",
-     messagingSenderId: "950885610300"
+      apiKey: "AIzaSyA7bcDJTezAUVPGuHJhHyRhLFLB9rL9rA8",
+    authDomain: "greenhouse-nsc-2018.firebaseapp.com",
+    databaseURL: "https://greenhouse-nsc-2018.firebaseio.com",
+    projectId: "greenhouse-nsc-2018",
+    storageBucket: "greenhouse-nsc-2018.appspot.com",
+    messagingSenderId: "1092111117790"
     }),
     AngularFireDatabaseModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+
     HomePage
   ],
   providers: [
