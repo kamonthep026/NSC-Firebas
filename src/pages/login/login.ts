@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { User } from '../../model/user';
-import { AlertController } from 'ionic-angular';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { SignupPage } from '../signup/signup';
 
 @IonicPage()
 @Component({
@@ -20,23 +13,29 @@ export class LoginPage {
   {username:'maya',password:'1234'};
   message:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  constructor(public navCtrl: NavController, 
+    public loadingCtrl: LoadingController,
+    ) {
   }
 
   login(user:User){
     console.log(user);
     if(user.username=='maya'&&user.password=='1234'){
       console.log("login");
-      this.navCtrl.push('FirebasePage')
+      this.navCtrl.push('MenuPage',{}, {animate: false})
     }else{
       console.log("Not login");
-      this.message="ผิด"
+      this.message="Username หรือ Password ผิด"
     }
+    this.loadingCtrl.create({
+      content: 'Please wait...',
+      duration: 3000,
+      dismissOnPageChange: true
+    }).present();
   }
-  
+  signup(){
+    this.navCtrl.push('SignupPage');
+    }
 }
+
 

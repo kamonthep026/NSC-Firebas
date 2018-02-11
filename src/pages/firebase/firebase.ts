@@ -1,23 +1,18 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, App, MenuController } from 'ionic-angular';
+import { NavController, NavParams, IonicPage, LoadingController,App} from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
-import { Observable } from 'rxjs/Observable';
 import { Device } from '../../model/device';
-/**
- * Generated class for the FirebasePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
-@IonicPage()
+
 @Component({
-  selector: 'page-firebase',
   templateUrl: 'firebase.html'
   
 })
+
 export class FirebasePage {
 
+  
+  app: any;
   devicelist:Device[];//ตัวแปรOb
   deviceb:Device = new Device(
     '',1,'09:00','13:00','17:00'
@@ -27,7 +22,9 @@ export class FirebasePage {
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    private db:DatabaseProvider
+    private db:DatabaseProvider, 
+    public loadingCtrl: LoadingController,
+    public app1: App
   ) {
     this.getDevice();
     setInterval(() => {         //replaced function() by ()=>
@@ -43,10 +40,6 @@ export class FirebasePage {
     }, 30000);
     console.log(this.deviceb);
     
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FirebasePage');
   }
  
   async getDevice(){
@@ -77,5 +70,16 @@ export class FirebasePage {
       console.log(result);
   })  
   }
-  
+  logout(){
+    const root = this.app1.getRootNav();
+    root.popToRoot();
+      this.loadingCtrl.create({
+        content: 'Please wait...',
+        duration: 3000,
+        dismissOnPageChange: true
+      }).present();
+  }
+ 
+
 }
+

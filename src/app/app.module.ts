@@ -3,28 +3,33 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-
 import { AngularFireModule } from 'angularfire2';
+import { FirebasePageModule } from '../pages/firebase/firebase.module';
+import { AboutPageModule } from '../pages/about/about.module';
+import { SettPageModule } from '../pages/sett/sett.module';
+import { SignupPageModule } from '../pages/signup/signup.module';
+
+
 // for AngularFireDatabase
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
-import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { DatabaseProvider } from '../providers/database/database';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
+    MyApp
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicImageViewerModule,
+    FirebasePageModule,
+    AboutPageModule,
+    SettPageModule,
+    SignupPageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyA7bcDJTezAUVPGuHJhHyRhLFLB9rL9rA8",
     authDomain: "greenhouse-nsc-2018.firebaseapp.com",
@@ -34,12 +39,12 @@ import { HttpClientModule } from '@angular/common/http';
     messagingSenderId: "1092111117790"
     }),
     AngularFireDatabaseModule,
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-
-    HomePage
+    MyApp
+    
   ],
   providers: [
     StatusBar,
@@ -50,7 +55,7 @@ import { HttpClientModule } from '@angular/common/http';
     DatabaseProvider,
     DatabaseProvider,
     DatabaseProvider,
-    DatabaseProvider
+    DatabaseProvider,
   ]
 })
 export class AppModule {}
