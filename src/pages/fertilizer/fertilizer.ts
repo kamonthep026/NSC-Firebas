@@ -1,17 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, IonicPage, LoadingController,App} from 'ionic-angular';
+import { NavController, NavParams, IonicPage,} from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
 import { Device } from '../../model/device';
 
-
+@IonicPage()
 @Component({
-  templateUrl: 'firebase.html'
-  
+  selector: 'page-fertilizer',
+  templateUrl: 'fertilizer.html',
 })
+export class FertilizerPage {
 
-export class FirebasePage {
-
-  
   app: any;
   devicelist:Device[];//ตัวแปรOb
   deviceb:Device = new Device(
@@ -23,8 +21,6 @@ export class FirebasePage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private db:DatabaseProvider, 
-    public loadingCtrl: LoadingController,
-    public app1: App
   ) {
     this.getDevice();
     setInterval(() => {         //replaced function() by ()=>
@@ -33,7 +29,7 @@ export class FirebasePage {
       let Minutes = this.timeNow.getMinutes();
       let HM = Houer+':'+Minutes;
       console.log(Houer+':'+Minutes); 
-      this.db.setObjectDevice('Light_bulb/time_now',HM)
+      this.db.setObjectDevice('fertilizer/time_now',HM)
       .then(result=>{
         console.log(result);
       })
@@ -50,7 +46,7 @@ export class FirebasePage {
   }
 
   switchDevice(device){
-    console.log('Deviec',device.$key);
+    console.log('Deviec');
     if(device.control===1){
       console.log('Deviec',0);
       this.db.switchDevice(device.$key,0);
@@ -65,21 +61,10 @@ export class FirebasePage {
   
   setTime(device){
     console.log(device);
-    this.db.updateListDevice('Light_bulb',device)
+    this.db.updateListDevice('fertilizer',device)
     .then(result=>{
       console.log(result);
   })  
   }
-  logout(){
-    const root = this.app1.getRootNav();
-    root.popToRoot();
-      this.loadingCtrl.create({
-        content: 'Please wait...',
-        duration: 3000,
-        dismissOnPageChange: true
-      }).present();
-  }
- 
 
 }
-

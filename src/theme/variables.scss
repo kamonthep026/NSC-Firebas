@@ -40,13 +40,14 @@ $colors: (
   light:      #ffffff,
   dark:       #222,
   energy: #10c7a8,
+  tobat: #5153e2 ,
 );
 
 //Top Toolber
-$toolber-md-background: color($colors, secondary);
+$toolbar-background: color($colors, tobat);
 
 //Bottom tabs 
-$tabs-md-background: color($colors, secondary);
+$tabs-md-background: color($colors, tobat);
 $tabs-md-tab-color-active: color($colors, light); 
 $tabs-md-tab-color: color($colors, light); 
 $tabs-md-tab-text-color: color($colors, light); 

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { SettPage } from './sett';
+import { WaterPage } from './water';
 
 @NgModule({
   declarations: [
-    SettPage,
+    WaterPage,
   ],
   imports: [
-    IonicPageModule.forChild(SettPage),
+    IonicPageModule.forChild(WaterPage),
   ],
 })
-export class SettPageModule {}
+export class WaterPageModule {}

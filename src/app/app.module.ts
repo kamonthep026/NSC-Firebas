@@ -5,17 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
-import { FirebasePageModule } from '../pages/firebase/firebase.module';
-import { AboutPageModule } from '../pages/about/about.module';
-import { SettPageModule } from '../pages/sett/sett.module';
 import { SignupPageModule } from '../pages/signup/signup.module';
-
 
 // for AngularFireDatabase
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { DatabaseProvider } from '../providers/database/database';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { OptionsPageModule } from '../pages/options/options.module';
+import { TemperaturePageModule } from '../pages/temperature/temperature.module';
+import { WaterPageModule } from '../pages/water/water.module';
+import { FertilizerPageModule } from '../pages/fertilizer/fertilizer.module';
 
 @NgModule({
   declarations: [
@@ -26,10 +26,11 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicImageViewerModule,
-    FirebasePageModule,
-    AboutPageModule,
-    SettPageModule,
+    OptionsPageModule,
+    TemperaturePageModule,
+    WaterPageModule,
     SignupPageModule,
+    FertilizerPageModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyA7bcDJTezAUVPGuHJhHyRhLFLB9rL9rA8",
     authDomain: "greenhouse-nsc-2018.firebaseapp.com",

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage,App, MenuController } from 'ionic-angular';
-import { SettPage } from '../sett/sett';
-import { AboutPage } from '../about/about';
-import { FirebasePage } from '../firebase/firebase';
-import { LoginPage } from '../login/login';
+import { OptionsPage } from '../options/options';
+import { FertilizerPage } from '../fertilizer/fertilizer';
+import { WaterPage } from '../water/water';
+import { TemperaturePage } from '../temperature/temperature';
 
 @IonicPage()
 @Component({
@@ -12,9 +12,10 @@ import { LoginPage } from '../login/login';
 })
 export class MenuPage {
 
-  tab1Root = FirebasePage;
-  tab2Root = AboutPage;
-  tab3Root = SettPage;
+  tab1Root = TemperaturePage;
+  tab2Root = WaterPage;
+  tab3Root = FertilizerPage;
+  tab4Root = OptionsPage;
   
   constructor() {
   }

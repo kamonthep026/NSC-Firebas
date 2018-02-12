@@ -1,0 +1,39 @@
+<ion-header id="signup">
+
+  <ion-navbar>
+    <ion-title>Fertilizer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding id="fertilizer">
+ 
+  <ion-list>
+    <ion-item *ngFor="let device of devicelist" (click)="switchDevice(device)">
+        <ion-label> ปล่อยปุ๋ย</ion-label>
+        <ion-toggle color="dark" checked="1" ></ion-toggle>  
+      </ion-item>
+  </ion-list>
+
+  <ion-item><div >ตั้งเวลาปล่อยปุ๋ย</div></ion-item>
+    <ion-item>
+      <ion-label>เวลาเช้า</ion-label>
+      <ion-datetime displayFormat="HH:m " pickerFormat="HH mm" [(ngModel)]="deviceb.time_morning" ></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>กลางวัน</ion-label>
+      <ion-datetime displayFormat="HH:m " pickerFormat="HH mm" [(ngModel)]="deviceb.time_noon"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>เวลาเย็น</ion-label>
+      <ion-datetime displayFormat="HH:m " pickerFormat="HH mm" [(ngModel)]="deviceb.time_night"></ion-datetime>
+    </ion-item>
+
+    <div padding>
+        <button ion-button full round (click)="setTime(deviceb)">SetTime</button>
+    </div>
+
+</ion-content>
+

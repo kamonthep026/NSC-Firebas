@@ -6,7 +6,7 @@
   
   </ion-header>
 
-<ion-content padding>
+<ion-content padding id="signup">
   <ion-list>
 
     <ion-item>
@@ -31,9 +31,11 @@
 
     <ion-item>
       <ion-label fixed>Key</ion-label>
-        <ion-input type="key" value=""></ion-input>
-      </ion-item>
+      <ion-input type="key" value=""></ion-input>
+    </ion-item>
 
-      <button ion-button full (click)="signup()">Sign up</button>
-    </ion-list>  
+  </ion-list>  
+  
+    <button ion-button full round (click)="signup()">Sign up</button>
+    
 </ion-content>

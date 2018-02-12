@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { FirebasePage } from './firebase';
+import { OptionsPage } from './options';
 
 @NgModule({
   declarations: [
-    FirebasePage,
+    OptionsPage,
   ],
   imports: [
-    IonicPageModule.forChild(FirebasePage),
+    IonicPageModule.forChild(OptionsPage),
   ],
 })
-export class FirebasePageModule {}
+export class OptionsPageModule {}
